@@ -1,1 +1,4 @@
 remote_theme: redtux/minimal-mistakes
+
+plugins:
+  - jekyll-include-cache
