@@ -3,8 +3,8 @@ minimal_mistakes_skin: "dark" # "default", "air", "aqua", "contrast", "dark", "d
 locale: "de"
 title: "panda!"
 title_separator: "🐾"
-name: "&name Pablo Hörtner"
-description: "&description assoziation panda! 🐾 Verein zur Förderung des kritischen literarischen Diskurses"
+name: &name "pandainfo.org"
+description: &description "assoziation panda! 🐾 Verein zur Förderung des kritischen literarischen Diskurses"
 logo: /assets/images/panda-avatar.png
 og_image: /assets/images/panda-avatar.png
 breadcrumbs: true
