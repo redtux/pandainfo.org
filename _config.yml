@@ -125,3 +125,12 @@ compress_html:
   clippings: all
   ignore:
     envs: development
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE*.md
+  - README.md
+
+include:
+  - _pages
