@@ -9,6 +9,11 @@ logo: /assets/images/panda-avatar.png
 og_image: /assets/images/panda-avatar.png
 breadcrumbs: true
 words_per_minute: 190
+
+search: true
+search_full_content: true
+search_provider: lunr
+
 author:
   name: *name
   avatar: /assets/images/panda-avatar.png
