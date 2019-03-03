@@ -1,14 +1,14 @@
 # main links
 main:
-  - title: "🐾 assoziation panda!"
+  - title: "🐾 Home"
     url: /
-  - title: "News"
+  - title: "📰 News"
     url: /news/
-  - title: "Buchtipps"
+  - title: "📕 Buchtipps"
     url: /books/
-  - title: "Events"
+  - title: "📅 Events"
     url: /events/
-  - title: "Über uns"
+  - title: "🐼 Über uns"
     url: /about/
-  - title: "Sitemap"
+  - title: "🛈 Sitemap"
     url: /sitemap/
