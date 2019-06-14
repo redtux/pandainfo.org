@@ -5,3 +5,12 @@ assets/js/lunr/*                  linguist-vendored
 assets/js/plugins/*               linguist-vendored
 assets/js/vendor/*                linguist-vendored
 _sass/minimal-mistakes/vendor/*   linguist-vendored
+
+# Enforce LF newlines
+*.css   text eol=lf
+*.html  text eol=lf
+*.js    text eol=lf
+*.json  text eol=lf
+*.less  text eol=lf
+*.md    text eol=lf
+*.yml   text eol=lf
