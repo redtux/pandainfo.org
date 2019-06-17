@@ -1,0 +1,8 @@
+# netlify.toml
+# This file should be at the root of your project
+[build]
+  command = "jekyll build --source ./ --destination ./_site --config ./_config.yml"
+  publish = "_site"
+
+[build.environment]
+  JEKYLL_ENV = "production"
