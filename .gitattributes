@@ -14,3 +14,7 @@ _sass/minimal-mistakes/vendor/*   linguist-vendored
 *.less  text eol=lf
 *.md    text eol=lf
 *.yml   text eol=lf
+
+# Auto detect text files and perform LF normalization
+* text=auto
+
