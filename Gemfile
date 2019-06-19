@@ -12,8 +12,8 @@ group :jekyll_plugins do
   gem "jekyll-gist"
   gem "jekyll-github-metadata"
   gem "jekyll-include-cache"
+  gem "jekyll-mentioji"
   gem "jekyll-octicons"
   gem "jekyll-paginate"
   gem "jekyll-sitemap"
-  gem "jemoji"
 end
