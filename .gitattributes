@@ -8,13 +8,67 @@ _sass/minimal-mistakes/vendor/*   linguist-vendored
 
 # Enforce LF newlines
 *.css   text eol=lf
-*.html  text eol=lf
+*.html  text eol=lf diff=html
 *.js    text eol=lf
 *.json  text eol=lf
 *.less  text eol=lf
 *.md    text eol=lf
+*.scss  text eol=lf diff=css
+*.sh    text eol=lf
+*.toml  text eol=lf
+*.xml   text eol=lf
 *.yml   text eol=lf
 
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Configs
+.editorconfig     text
+.gitattributes    text
+.gitconfig        text
+*.lock            text -diff
+package-lock.json text -diff
+
+# These files are binary and should be left untouched
+# (binary is a macro for -text -diff)
+
+# Archives
+*.7z    binary
+*.gz    binary
+*.zip   binary
+
+# Audio & Video
+*.fla   binary
+*.flv   binary
+*.mov   binary
+*.mp3   binary
+*.mp4   binary
+*.ogg   binary
+*.ogv   binary
+*.swf   binary
+*.webm  binary
+
+# Graphics
+*.eps   binary
+*.gif   binary
+*.ico   binary
+*.jpeg  binary
+*.jpg   binary
+*.pdf   binary
+*.png   binary
+*.tif   binary
+*.tiff  binary
+*.webp  binary
+
+# SVG is treated as an asset (binary) by default
+*.svg   binary
+
+# Fonts
+*.eot   binary
+*.otf   binary
+*.ttf   binary
+*.woff  binary
+
+# Encrypt Jekyll drafts
+#_drafts/* filter=git-crypt diff=git-crypt
 
