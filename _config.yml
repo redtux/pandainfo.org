@@ -1,23 +1,235 @@
-remote_theme: redtux/minimal-mistakes
-minimal_mistakes_skin: "dark" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum" "sunrise"
-locale: "de"
-title: "panda!"
-title_separator: "🐾"
-name: &name "pandainfo.org"
-description: &description "assoziation panda! 🐾 Verein zur Förderung des kritischen literarischen Diskurses"
-logo: /assets/images/panda-avatar.png
-og_image: /assets/images/panda-avatar.png
-breadcrumbs: true
-words_per_minute: 190
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your entire site, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# `jekyll serve`. If you change this file, please restart the server process.
 
-search: true
-search_full_content: true
-search_provider: lunr
+# Theme Settings
+#
+# Review documentation to determine if you should use `theme` or `remote_theme`
+# https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
+# theme                  : "minimal-mistakes-jekyll"
+remote_theme             : mmistakes/minimal-mistakes # Minimal Mistakes theme © MIT 2013–2019 Michael Rose & contributors
+minimal_mistakes_skin    : "mint" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum" "sunrise"
+
+# Site Settings
+locale                   : "de" #
+title                    : &name "pandainfo.org"
+title_separator          : "🐾"
+name                     : *name
+description              : &description "assoziation panda! 🐾 Verein zur Förderung des kritischen literarischen Diskurses"
+repository               : "redtux/pandainfo.org"
+teaser                   : "/assets/images/teaser-placeholder-630x200.jpg"
+#logo                     : &logo "/assets/images/panda-avatar.png"
+masthead_title           : *name
+breadcrumbs              : true
+words_per_minute         : 190
+
+search                   : true
+search_full_content      : true
+search_provider          : "lunr"
+
+# SEO Related
+google_site_verification :
+bing_site_verification   :
+yandex_site_verification :
+naver_site_verification  :
+
+# Matomo (aka Piwik) Web statistics
+# Uncomment the following section to enable Matomo. The opt-out parameter controls
+# whether or not you want to allow users to opt out of tracking.
+#matomo:
+#  site_id: "9"
+#  uri: *name
+#  opt-out: true
+
+# Social Sharing
+twitter:
+  username               : "redtux"
+facebook:
+  username               : "radicalbookstore"
+  app_id                 :
+  publisher              :
+og_image                 : &logo "/assets/images/panda-avatar.png"
+# For specifying social profiles
+# - https://developers.google.com/structured-data/customize/social-profiles
+social:
+  type                   : # Person or Organization (defaults to Person)
+  name                   : # If the user or organization name differs from the site's name
+  links: # An array of links to social media profiles
+
+# Site Author
 author:
-  name: *name
-  avatar: /assets/images/panda-avatar.png
+  name                   : *name
+  avatar                 : *logo
+  bio                    : *description
+  location               : "Vienna, Austria"
+  links:
+    - label: *name
+      icon: "fas fa-fw fa-link"
+      url: "https://pandainfo.org"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/redtux"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/redtux"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/redtux2000"
 
+# Site Footer
+footer:
+  links:
+    - label: *name
+      icon: "fas fa-fw fa-link"
+      url: "https://pandainfo.org"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/redtux"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/redtux"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/redtux2000"
+
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+exclude:
+  - vendor
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/plugins
+  - assets/js/_main.js
+  - assets/js/vendor
+  - Capfile
+  - CHANGELOG.md
+  - code-of-conduct.md
+  - config
+  - Gemfile
+  - Gemfile.lock
+  - Gruntfile.js
+  - gulpfile.js
+  - LICENSE*.md
+  - licenses
+  - log
+  - node_modules
+  - package.json
+  - Rakefile
+  - README.md
+  - tmp
+keep_files:
+  - .git
+  - .svn
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# Liquid
+strict_front_matter: true
+liquid:
+  error_mode: strict
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+
+# Outputting
+permalink: /:categories/:title/
+paginate: 5 # amount of posts to show
+paginate_path: /page:num/
+timezone: Europe/Vienna # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+# Plugins (previously gems:)
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  #- jemoji
+  - jekyll-mentioji
+  - jekyll-include-cache
+  - jekyll-archives
+  - jekyll-avatar
+  - jekyll-github-metadata
+  - jekyll-octicons
+
+# mimic GitHub Pages with --safe
+whitelist:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  #- jemoji
+  - jekyll-mentioji
+  - jekyll-include-cache
+
+# Archives
+#  Type
+#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
+#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
+#  Path (examples)
+#  - Archive page should exist at path when using Liquid method or you can
+#    expect broken links (especially with breadcrumbs enabled)
+#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
+#  - <base_path/categories/my-awesome-category/index.html ~> path: /categories/
+#  - <base_path/my-awesome-category/index.html ~> path: /
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+# https://github.com/jekyll/jekyll-archives
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-taxonomy
+    tag: archive-taxonomy
+  permalinks:
+    category: '/categories/:name/'
+    tag: '/tags/:name/'
+    year: '/:year/'
+    month: '/:year/:month/'
+    day: '/:year/:month/:day/'
+    tag: '/tag/:name/'
+    category: '/category/:name/'
+
+# HTML Compression
+# - http://jch.penibelst.de/
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
+
+# Collections
 collections:
   news:
     output: true
@@ -28,10 +240,8 @@ collections:
   events:
     output: true
     permalink: /:collection/:path/
-  about:
-    output: true
-    permalink: /:collection/:path/
 
+# Defaults
 defaults:
   # _posts
   - scope:
@@ -41,7 +251,7 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: true
+      comments: false
       share: true
       related: true
   # _pages
@@ -50,16 +260,16 @@ defaults:
       type: pages
     values:
       layout: single
-      author_profile: true
+      author_profile: false
   # _books
   - scope:
       path: ""
       type: books
     values:
       layout: single
-      read_time: false
-      author_profile: false
-      share: false
+      read_time: true
+      author_profile: true
+      share: true
       comments: false
       sidebar:
         nav: "books"
@@ -87,50 +297,5 @@ defaults:
       type: about
     values:
       layout: single
-      author_profile: false
+      author_profile: true
       share: true
-
-sass:
-  sass_dir: _sass
-  style: compressed
-
-permalink: /:categories/:title/
-paginate: 5
-timezone: Europe/Vienna
-
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
-  - jekyll-include-cache
-
-whitelist:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
-  - jekyll-include-cache
-
-category_archive:
-  type: liquid
-  path: /categories/
-tag_archive:
-  type: liquid
-  path: /tags/
-
-compress_html:
-  clippings: all
-  ignore:
-    envs: development
-
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE*.md
-  - README.md
-
-include:
-  - _pages
