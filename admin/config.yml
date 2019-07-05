@@ -1,35 +1,52 @@
 backend:
-  name: git-gateway
-  branch: master # Branch to update (optional; defaults to master)
+  name: github
+  #name: git-gateway
+  repo: redtux/pandainfo.org    # Path to your Github/Gitlab repository
+  branch: master                # Branch to update (optional; defaults to master)
+  base_url: https://redtux.github.io/pandainfo.org/ # Path to ext auth provider
 
-publish_mode: editorial_workflow
-media_folder: "assets/images" # Media files will be stored in the repo under assets/images
-public_folder: "/assets/images"
+#publish_mode: editorial_workflow
+media_folder: "assets/images" # Folder where user uploaded files should go
+#public_folder: "/assets/images"
+#display_url:
 
-collections:
-  - name: "articles"
-    label: "Articles"
-    folder: "_posts/articles"
-    create: true
+collections: # A list of collections the CMS should be able to edit
+  - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Post" # Used in the UI, ie.: "New Post"
+    folder: "_posts" # The path to the folder where the documents are stored
+    sort: "date:desc" # Default is title:asc
+    create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
+    fields: # The fields each document in this collection have
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Excerpt", name: "excerpt", widget: "string"}
-      - label: "Image"
-        name: "image"
-        widget: "object"
-        fields:
-          - {label: "Path", name: "path", widget: "image"}
-          - {label: "Feature image path", name: "feature", widget: "image"}
-          - {label: "Image width", name: "width", widget: "number", valueType: "int"}
-          - {label: "Image height", name: "height", widget: "number", valueType: "int"}
-          - {label: "Image caption", name: "caption", widget: "string"}
-      - {label: "Last modified date", name: "last_modified_date", widget: "datetime"}
-      - {label: "Reading time", name: "read_time", widget: "boolean", default: true}
-      - {label: "Categories", name: "categories", widget: "list", default: ["articles"]}
-      - {label: "Tags", name: "tags", widget: "list"}
-      - {label: "Table of contents", name: "toc", widget: "boolean", default: false}
-      - {label: "Comments", name: "comments", widget: "boolean", default: false}
-      - {label: "Support block", name: "support", widget: "boolean", default: false}
+      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Categories", name: "categories", widget: "string", required: false}
+    meta: # Meta data fields. Just like fields, but without any preview element
+      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"}
+#  - name: "articles"
+#    label: "Articles"
+#    folder: "_posts/articles"
+#    create: true
+#    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+#    fields:
+#      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+#      - {label: "Title", name: "title", widget: "string"}
+#      - {label: "Excerpt", name: "excerpt", widget: "string"}
+#      - label: "Image"
+#        name: "image"
+#        widget: "object"
+#        fields:
+#          - {label: "Path", name: "path", widget: "image"}
+#          - {label: "Feature image path", name: "feature", widget: "image"}
+#          - {label: "Image width", name: "width", widget: "number", valueType: "int"}
+#          - {label: "Image height", name: "height", widget: "number", valueType: "int"}
+#          - {label: "Image caption", name: "caption", widget: "string"}
+#      - {label: "Last modified date", name: "last_modified_date", widget: "datetime"}
+#      - {label: "Reading time", name: "read_time", widget: "boolean", default: true}
+#      - {label: "Categories", name: "categories", widget: "list", default: ["articles"]}
+#      - {label: "Tags", name: "tags", widget: "list"}
+#      - {label: "Table of contents", name: "toc", widget: "boolean", default: false}
+#      - {label: "Comments", name: "comments", widget: "boolean", default: false}
+#      - {label: "Support block", name: "support", widget: "boolean", default: false}
+#      - {label: "Body", name: "body", widget: "markdown"}
