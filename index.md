@@ -1,22 +1,18 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: splash
 author_profile: false
 classes:
-  - landing
+- landing
 header:
-  overlay_image: /assets/images/LU-cover-2000x1500.jpg
+  overlay_image: "/assets/images/LU-cover-2000x1500.jpg"
   overlay_filter: 0.6
-  caption: "Credits: [**Stefanie Klamuth**](/authors/kaputtzig/)"
+  caption: 'Credits: [**Stefanie Klamuth**](/authors/kaputtzig/)'
   actions:
-    - label: "Jetzt Mitglied werden!"
-      url: "/about/"
-    - label: "Hier spenden!"
-      url: "#"
-#title: "assoziation panda! 🐾"
-excerpt: "Verein zur Förderung des kritischen literarischen Diskurses"
+  - label: Jetzt Mitglied werden!
+    url: "/about/"
+  - label: Hier spenden!
+    url: "#"
+excerpt: Verein zur Förderung des kritischen literarischen Diskurses
 share: true
 ---
 

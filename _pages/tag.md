@@ -1,8 +1,8 @@
 ---
+title: Übersicht nach Thema
+permalink: "/tag/"
 layout: archive
-permalink: /tag/
-title: "Übersicht nach Thema"
-excerpt: "Hier findest du eine Übersicht aller Beiträge nach Themen geordnet."
+excerpt: Hier findest du eine Übersicht aller Beiträge nach Themen geordnet.
 author_profile: false
 ---
 

@@ -1,7 +1,8 @@
 ---
+title: Feed aller Beiträge
 layout: atom_feed
 category_limit: articles
 limit: 25
-title: "Feed aller Beiträge"
 sitemap: false
 ---
+

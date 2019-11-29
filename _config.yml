@@ -1,149 +1,180 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your entire site, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve`. If you change this file, please restart the server process.
-
-# Theme Settings
-#
-# Review documentation to determine if you should use `theme` or `remote_theme`
-# https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
-
-# theme                  : "minimal-mistakes-jekyll"
-remote_theme             : mmistakes/minimal-mistakes # Minimal Mistakes theme © MIT 2013–2019 Michael Rose & contributors
-minimal_mistakes_skin    : "mint" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum" "sunrise"
-
-# Site Settings
-locale                   : "de" #
-title                    : &name "pandainfo.org"
-title_separator          : "🐾"
-name                     : *name
-description              : &description "assoziation panda! 🐾 Verein zur Förderung des kritischen literarischen Diskurses"
-repository               : "redtux/pandainfo.org"
-teaser                   : "/assets/images/teaser-placeholder-630x200.jpg"
-#logo                     : &logo "/assets/images/panda-avatar.png"
-masthead_title           : *name
-breadcrumbs              : true
-words_per_minute         : 190
-
-search                   : true
-search_full_content      : true
-search_provider          : "lunr"
-
-# SEO Related
-google_site_verification :
-bing_site_verification   :
-yandex_site_verification :
-naver_site_verification  :
-
-# Matomo (aka Piwik) Web statistics
-# Uncomment the following section to enable Matomo. The opt-out parameter controls
-# whether or not you want to allow users to opt out of tracking.
-#matomo:
-#  site_id: "9"
-#  uri: *name
-#  opt-out: true
-
-# Social Sharing
+---
+title: pandainfo.org
+timezone: Europe/Vienna
+collections:
+  books:
+    title: Books
+    output: true
+    permalink: "/:collection/:path/"
+  events:
+    title: Events
+    output: true
+    permalink: "/:collection/:path/"
+  news:
+    title: News
+    output: true
+    permalink: "/:collection/:path/"
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
+defaults:
+- scope:
+    path: ''
+    type: posts
+  values:
+    layout: single
+    author_profile: true
+    read_time: true
+    comments: false
+    share: true
+    related: true
+- scope:
+    path: _pages
+    type: pages
+  values:
+    layout: single
+    author_profile: false
+- scope:
+    path: ''
+    type: books
+  values:
+    layout: single
+    read_time: true
+    author_profile: true
+    share: true
+    comments: false
+    sidebar:
+      nav: books
+- scope:
+    path: ''
+    type: events
+  values:
+    layout: single
+    author_profile: true
+    share: true
+    comments: true
+- scope:
+    path: ''
+    type: news
+  values:
+    layout: single
+    author_profile: true
+    share: true
+    comment: true
+- scope:
+    path: ''
+    type: about
+  values:
+    layout: single
+    author_profile: true
+    share: true
+remote_theme: mmistakes/minimal-mistakes
+minimal_mistakes_skin: mint
+locale: de
+title_separator: "\U0001F43E"
+name: pandainfo.org
+description: "assoziation panda! \U0001F43E Verein zur Förderung des kritischen literarischen
+  Diskurses"
+repository: redtux/pandainfo.org
+teaser: "/assets/images/teaser-placeholder-630x200.jpg"
+masthead_title: pandainfo.org
+breadcrumbs: true
+words_per_minute: 190
+search: true
+search_full_content: true
+search_provider: lunr
+google_site_verification: 
+bing_site_verification: 
+yandex_site_verification: 
+naver_site_verification: 
 twitter:
-  username               : "redtux"
+  username: redtux
 facebook:
-  username               : "radicalbookstore"
-  app_id                 :
-  publisher              :
-og_image                 : &logo "/assets/images/panda-avatar.png"
-# For specifying social profiles
-# - https://developers.google.com/structured-data/customize/social-profiles
+  username: radicalbookstore
+  app_id: 
+  publisher: 
+og_image: "/assets/images/panda-avatar.png"
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
-  links: # An array of links to social media profiles
-
-# Site Author
+  type: 
+  name: 
+  links: 
 author:
-  name                   : *name
-  avatar                 : *logo
-  bio                    : *description
-  location               : "Vienna, Austria"
+  name: pandainfo.org
+  avatar: "/assets/images/panda-avatar.png"
+  bio: "assoziation panda! \U0001F43E Verein zur Förderung des kritischen literarischen
+    Diskurses"
+  location: Vienna, Austria
   links:
-    - label: *name
-      icon: "fas fa-fw fa-link"
-      url: "https://pandainfo.org"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/redtux"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/redtux"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/redtux2000"
-
-# Site Footer
+  - label: pandainfo.org
+    icon: fas fa-fw fa-link
+    url: https://pandainfo.org
+  - label: Twitter
+    icon: fab fa-fw fa-twitter-square
+    url: https://twitter.com/redtux
+  - label: GitHub
+    icon: fab fa-fw fa-github
+    url: https://github.com/redtux
+  - label: Instagram
+    icon: fab fa-fw fa-instagram
+    url: https://instagram.com/redtux2000
 footer:
   links:
-    - label: *name
-      icon: "fas fa-fw fa-link"
-      url: "https://pandainfo.org"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/redtux"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/redtux"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/redtux2000"
-
-# Reading Files
+  - label: pandainfo.org
+    icon: fas fa-fw fa-link
+    url: https://pandainfo.org
+  - label: Twitter
+    icon: fab fa-fw fa-twitter-square
+    url: https://twitter.com/redtux
+  - label: GitHub
+    icon: fab fa-fw fa-github
+    url: https://github.com/redtux
+  - label: Instagram
+    icon: fab fa-fw fa-instagram
+    url: https://instagram.com/redtux2000
 include:
-  - .htaccess
-  - _pages
+- ".htaccess"
+- _pages
 exclude:
-  - vendor
-  - .asset-cache
-  - .bundle
-  - .jekyll-assets-cache
-  - .sass-cache
-  - assets/js/plugins
-  - assets/js/_main.js
-  - assets/js/vendor
-  - Capfile
-  - CHANGELOG.md
-  - code-of-conduct.md
-  - config
-  - Gemfile
-  - Gemfile.lock
-  - Gruntfile.js
-  - gulpfile.js
-  - LICENSE*.md
-  - licenses
-  - log
-  - node_modules
-  - package.json
-  - Rakefile
-  - README.md
-  - tmp
+- vendor
+- ".asset-cache"
+- ".bundle"
+- ".jekyll-assets-cache"
+- ".sass-cache"
+- assets/js/plugins
+- assets/js/_main.js
+- assets/js/vendor
+- Capfile
+- CHANGELOG.md
+- code-of-conduct.md
+- config
+- Gemfile
+- Gemfile.lock
+- Gruntfile.js
+- gulpfile.js
+- LICENSE*.md
+- licenses
+- log
+- node_modules
+- package.json
+- Rakefile
+- README.md
+- tmp
 keep_files:
-  - .git
-  - .svn
-encoding: "utf-8"
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-
-# Liquid
+- ".git"
+- ".svn"
+encoding: utf-8
+markdown_ext: markdown,mkdown,mkdn,mkd,md
 strict_front_matter: true
 liquid:
   error_mode: strict
-
-# Conversion
 markdown: kramdown
 highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
-
-# Markdown Processing
 kramdown:
   input: GFM
   hard_wrap: false
@@ -153,149 +184,50 @@ kramdown:
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
-
-# Sass/SCSS
 sass:
   sass_dir: _sass
-  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
-
-# Outputting
-permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
-paginate_path: /page:num/
-timezone: Europe/Vienna # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-
-# Plugins (previously gems:)
+  style: compressed
+permalink: "/:categories/:title/"
+paginate: 5
+paginate_path: "/page:num/"
 plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  #- jemoji
-  - jekyll-mentioji
-  - jekyll-include-cache
-  - jekyll-archives
-  - jekyll-avatar
-  - jekyll-github-metadata
-  - jekyll-octicons
-
-# mimic GitHub Pages with --safe
+- jekyll-paginate
+- jekyll-sitemap
+- jekyll-gist
+- jekyll-feed
+- jekyll-mentioji
+- jekyll-include-cache
+- jekyll-archives
+- jekyll-avatar
+- jekyll-github-metadata
+- jekyll-octicons
 whitelist:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  #- jemoji
-  - jekyll-mentioji
-  - jekyll-include-cache
-
-# Archives
-#  Type
-#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
-#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
-#  Path (examples)
-#  - Archive page should exist at path when using Liquid method or you can
-#    expect broken links (especially with breadcrumbs enabled)
-#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
-#  - <base_path/categories/my-awesome-category/index.html ~> path: /categories/
-#  - <base_path/my-awesome-category/index.html ~> path: /
+- jekyll-paginate
+- jekyll-sitemap
+- jekyll-gist
+- jekyll-feed
+- jekyll-mentioji
+- jekyll-include-cache
 category_archive:
   type: liquid
-  path: /categories/
+  path: "/categories/"
 tag_archive:
   type: liquid
-  path: /tags/
-# https://github.com/jekyll/jekyll-archives
+  path: "/tags/"
 jekyll-archives:
   enabled:
-    - categories
-    - tags
+  - categories
+  - tags
   layouts:
     category: archive-taxonomy
     tag: archive-taxonomy
   permalinks:
-    category: '/categories/:name/'
-    tag: '/tags/:name/'
-    year: '/:year/'
-    month: '/:year/:month/'
-    day: '/:year/:month/:day/'
-    tag: '/tag/:name/'
-    category: '/category/:name/'
-
-# HTML Compression
-# - http://jch.penibelst.de/
+    category: "/category/:name/"
+    tag: "/tag/:name/"
+    year: "/:year/"
+    month: "/:year/:month/"
+    day: "/:year/:month/:day/"
 compress_html:
   clippings: all
   ignore:
     envs: development
-
-# Collections
-collections:
-  news:
-    output: true
-    permalink: /:collection/:path/
-  books:
-    output: true
-    permalink: /:collection/:path/
-  events:
-    output: true
-    permalink: /:collection/:path/
-
-# Defaults
-defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: false
-      share: true
-      related: true
-  # _pages
-  - scope:
-      path: "_pages"
-      type: pages
-    values:
-      layout: single
-      author_profile: false
-  # _books
-  - scope:
-      path: ""
-      type: books
-    values:
-      layout: single
-      read_time: true
-      author_profile: true
-      share: true
-      comments: false
-      sidebar:
-        nav: "books"
-  # _events
-  - scope:
-      path: ""
-      type: events
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
-  # _news
-  - scope:
-      path: ""
-      type: news
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comment: true
-  # _about
-  - scope:
-      path: ""
-      type: about
-    values:
-      layout: single
-      author_profile: true
-      share: true
